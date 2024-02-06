@@ -6,7 +6,7 @@ import ShimmerUI from "./ShimmerUI";
 const Main = () => {
   const [plants, setAllPlants] = useState([]);
 
-  async function fetchPlantData() {
+  const fetchPlantData = async () => {
     try {
       const data = await fetch(PLANT_API + PLANT_API_SECRET_KEY);
       const json = await data.json();
@@ -14,12 +14,12 @@ const Main = () => {
     } catch (e) {
       console.error(e);
     }
-  }
+  };
   useEffect(() => {
     fetchPlantData();
   }, []);
 
-  if (!plants) return <ShimmerUI />;
+  if (!plants.length) return <ShimmerUI />;
   return (
     <>
       <div className="my-4 bg-[#90181E]">
@@ -30,10 +30,17 @@ const Main = () => {
         <h1 className="text-3xl font-semibold text-center text-[#2E524A]">
           Shop Our Best Delight
         </h1>
-        <div className="w-1/4 flex justify-evenly">
-          {plants &&
-            plants.map((plant) => <PlantCard key={plant.id} data={plant} />)}
-        </div>
+        <p className="text-center text-[#2E524A]">
+          We have a wide range of plants to choose from. Pick your favorite now!
+        </p>
+      </div>
+      <div className="flex flex-wrap">
+        {plants.map((plant) => (
+          <PlantCard key={plant.id} data={plant} />
+        ))}
+      </div>
+      <div>
+        
       </div>
     </>
   );
