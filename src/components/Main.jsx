@@ -12,9 +12,8 @@ const Main = () => {
       const data = await fetch(PLANT_API + PLANT_API_TOKEN + "&page=" + page);
       const json = await data.json();
       setAllPlants(json.data);
-      console.log(json);
     } catch (e) {
-      console.error(e);
+      throw new Error(e);
     }
   };
 
@@ -24,7 +23,6 @@ const Main = () => {
 
   const selectHandler = (i) => {
     if (page >= 1 && page <= plants.length && page !== i) setPage(i);
-    console.log(i, plants.length);
   };
 
   if (!plants.length) return <ShimmerUI />;
