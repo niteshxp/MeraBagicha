@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import Main from "./components/Main";
+import Error from "./components/Error";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ export const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <div>Not Found</div>,
+    errorElement: <Error />,
     children: [
       {
         path: "/",

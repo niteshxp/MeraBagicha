@@ -8,8 +8,8 @@ const PlantCard = ({ data }) => {
       {data && (
         <div className="w-96 m-4 bg-green-50 rounded-lg py-1">
           <img
-            className="mx-auto my-4 rounded-lg"
-            src={data?.default_image?.thumbnail}
+            className="w-full h-52 bg-cover mx-auto my-4 rounded-lg"
+            src={data?.image_url}
             alt="plant"
           />
           <div className="text-center">
@@ -17,9 +17,9 @@ const PlantCard = ({ data }) => {
             <h1 className="text-xl text-black">({data?.scientific_name})</h1>
           </div>
           <div className="text-center">
-            <h4>Cycle : {data?.cycle}</h4>
-            <h4>Sunlight : {data?.sunlight}</h4>
-            <h4>Watering : {data?.watering}</h4>
+            <h4>Family : {data?.family}</h4>
+            <h4>Genus : {data?.genus}</h4>
+            <h4>Rank : {data?.rank}</h4>
           </div>
           <span className="block my-2 mx-32 bg-gray-200 p-2 rounded-lg hover:bg-gray-400">
             ADD TO CART
