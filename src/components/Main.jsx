@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { PLANT_API, PLANT_API_TOKEN } from "../utils/constants";
 import PlantCard from "./PlantCard";
 import ShimmerUI from "./ShimmerUI";
+import Footer from "./Footer";
 
 const Main = () => {
   const [plants, setAllPlants] = useState([]);
@@ -51,9 +52,9 @@ const Main = () => {
       </div>
 
       {plants.length > 0 && (
-        <div className="text-center my-4">
+        <div className="text-center mt-10">
           <span
-            className={page === 1 ? "hidden" : "inline-block"}
+            className={page === 1 ? "hidden" : "inline-block cursor-pointer"}
             onClick={() => selectHandler(page - 1)}
           >
             ◀️
@@ -70,13 +71,15 @@ const Main = () => {
             </span>
           ))}
           <span
-            className={page === 20 ? "hidden" : "inline-block"}
+            className={page === 20 ? "hidden" : "inline-block cursor-pointer"}
             onClick={() => selectHandler(page + 1)}
           >
             ▶️
           </span>
         </div>
       )}
+
+      <Footer />
     </>
   );
 };

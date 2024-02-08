@@ -38,7 +38,7 @@ const Header = () => {
                     className={`${
                       plantList.length >= 10
                         ? "-mt-[2px] mx-[1px]"
-                        : "-mt-[3px] mx-[4px]"
+                        : "-mt-[3px] mx-[5.5px]"
                     } `}
                   >
                     {plantList.length}

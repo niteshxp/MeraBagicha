@@ -12,7 +12,7 @@ const PlantCard = ({ data }) => {
       {data && (
         <div className="w-96 m-4 bg-green-50 rounded-lg py-1">
           <img
-            className="w-full h-52 bg-cover mx-auto my-4 rounded-lg"
+            className="w-full h-52 object-cover mx-auto my-4 rounded-lg"
             src={data?.image_url}
             alt="plant"
           />
