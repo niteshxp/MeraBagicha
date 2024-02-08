@@ -1,7 +1,11 @@
 import React from "react";
 import ShimmerUI from "./ShimmerUI";
+import Store from "../store/store";
+import { useStore } from "zustand";
 
 const PlantCard = ({ data }) => {
+  const { plantList, addPlant, removePlant } = useStore(Store);
+
   if (!data) return <ShimmerUI />;
   return (
     <div className="bg-lime-100">
@@ -21,7 +25,10 @@ const PlantCard = ({ data }) => {
             <h4>Genus : {data?.genus}</h4>
             <h4>Rank : {data?.rank}</h4>
           </div>
-          <span className="block my-2 mx-32 bg-gray-200 p-2 rounded-lg hover:bg-gray-400">
+          <span
+            className="block cursor-pointer my-2 mx-32 bg-gray-200 p-2 rounded-lg hover:bg-gray-400"
+            onClick={() => addPlant(data)}
+          >
             ADD TO CART
           </span>
         </div>

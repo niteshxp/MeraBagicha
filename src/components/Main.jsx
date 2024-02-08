@@ -29,6 +29,8 @@ const Main = () => {
 
   return (
     <>
+      {}
+
       <div className="my-4 bg-[#90181E]">
         <img src="https://cdn.shopify.com/s/files/1/0646/8327/8550/files/Homepage_desktop-01.png?v=1706381413" />
       </div>
