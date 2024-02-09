@@ -11,7 +11,10 @@ const Cart = () => {
         <div className="flex flex-wrap justify-center">
           {plantList.map((plant) => (
             <div key={plant.id} className="text-center m-4">
-              <img src={plant.image_url} className="w-60 h-52 rounded-lg" />
+              <img
+                src={plant.image_url}
+                className="w-60 h-52 object-cover rounded-lg"
+              />
               <h1>{plant.common_name}</h1>
               <h1>{plant.rank}</h1>
               <button

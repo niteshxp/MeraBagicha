@@ -4,7 +4,7 @@ import cartSVG from "../assets/cart.svg";
 import Store from "../store/store";
 
 const Header = () => {
-  const { plantList } = Store.getState();
+  const { plantList } = Store();
 
   return (
     <div className="h-20">
